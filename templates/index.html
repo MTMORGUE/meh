@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>GMGN Price Charts & Tickers</h2>
+
+<div class="ticker-container">
+  {% for chain, token_addr, token_name in tokens %}
+    <div class="ticker">
+      <strong>{{ token_name }}</strong><br />
+      {{ chain|upper }} / {{ token_addr|truncate(10, True, '...') }}
+    </div>
+  {% endfor %}
+</div>
+
+<div style="margin-top:1em;">
+  <iframe src="{{ main_chart_url }}" style="width:100%; min-height:600px; border:none;"></iframe>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Database - Tokens</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Token Name</th>
+      <th>Symbol</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in tokens %}
+    <tr>
+      <td>{{ row['id'] }}</td>
+      <td>{{ row['token_name'] }}</td>
+      <td>{{ row['symbol'] }}</td>
+      <td>{{ row['status'] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

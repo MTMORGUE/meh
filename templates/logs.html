@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Logs</h2>
+<div style="max-height:600px; overflow-y:auto; background-color:#fafafa; padding:0.5em;">
+{% for line in logs %}
+  <div style="white-space: pre;">{{ line }}</div>
+{% endfor %}
+</div>
+{% endblock %}
